@@ -1,0 +1,22 @@
+# dsh-better-quark-drive bundle patch
+#
+# 插件只插入一行；所有可调项都在 config 里，改完重启 DSH 生效。
+# 不想让它常驻时把 enabled 改成 false 即可（工具会整体下线）。
+- insert:
+    - id: better-quark-drive
+      name: 'dsh-better-quark-drive'
+      config:
+        enabled: true
+        # 留空 = 自动查找 $DSH_HOME/skills、~/.agents/skills、~/.claude/skills 下的
+        # quarkclouddrive/scripts/quark-drive.cjs；也可直接写绝对路径。
+        cliPath: ''
+        # 1 = 公开链接，2 = 私密链接（提取码由服务端生成）
+        shareUrlType: 1
+        # 分享默认有效期（天）：0 永久，1/7/30/60/100/180
+        shareExpireDays: 7
+        # 普通命令超时（毫秒）
+        timeoutMs: 180000
+        # 上传/下载超时（毫秒）
+        uploadTimeoutMs: 1800000
+        # 列表类工具一次最多回给模型多少行
+        maxRows: 20

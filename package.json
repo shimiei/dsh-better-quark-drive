@@ -1,0 +1,71 @@
+{
+  "name": "dsh-better-quark-drive",
+  "version": "0.1.0",
+  "description": "让 DSH 里的 AI 一句话操作夸克网盘：上传 + 分享一步到位，搜索/浏览/转存/下载全部工具化。DeepSeek Harness plugin for Quark Drive (upload, share, search, saveas, download).",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools": "./lib/tools.js",
+    "./cli": "./lib/cli.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:live": "node scripts/smoke.mjs --live"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-plugins",
+    "deepseek-harness",
+    "quark",
+    "quarkclouddrive",
+    "夸克网盘",
+    "netdisk",
+    "agent",
+    "tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimiei/dsh-better-quark-drive.git"
+  },
+  "homepage": "https://github.com/shimiei/dsh-better-quark-drive#readme",
+  "bugs": {
+    "url": "https://github.com/shimiei/dsh-better-quark-drive/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "install": {
+      "preferred": "tarball",
+      "tarball": "https://github.com/shimiei/dsh-better-quark-drive/archive/refs/heads/main.tar.gz",
+      "zip": "https://github.com/shimiei/dsh-better-quark-drive/archive/refs/heads/main.zip",
+      "git": "https://github.com/shimiei/dsh-better-quark-drive.git"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dshTarget": "0.2.0-rc.2"
+}

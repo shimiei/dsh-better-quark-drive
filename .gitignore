@@ -1,0 +1,17 @@
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.env
+.env.*
+downloads/
+.tmp-*
+.quark-*
+browse/
+deliver.json
+.vscode/
+.idea/
